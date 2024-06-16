@@ -41,7 +41,7 @@ if __name__ == '__main__':
     parser.add_argument('--task_name', type=str, default='long_term_forecast',
                         help='task name, options:[long_term_forecast, short_term_forecast, imputation, classification, anomaly_detection]')
     parser.add_argument('--is_training', type=int, default=1, help='status')
-    parser.add_argument('--model_id', type=str, required=True, default='test', help='model id')
+    parser.add_argument('--model_id', type=str, required=False, default='ICLR24_CRV', help='model id')
     parser.add_argument('--model', type=str, required=True, default='STEncoderS',
                         help='model name, options: [STEncoderS,STEncoderM]')
 
