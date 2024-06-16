@@ -1,0 +1,192 @@
+model=STEncoderS
+
+pred_len=48
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 48 \
+  --anomaly_ratio 0.25 \
+  --batch_size 64 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 16 \
+  --d_layers 1 \
+  --d_model 16 \
+  --data exchange_rate \
+  --data_path exchange_rate.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 1 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 24 \
+  --learning_rate 0.001 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len 48 \
+  --root_path ./dataset/exchange_rate \
+  --seasonal_patterns Monthly \
+  --seq_len 48 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 128 \
+  --dd_ff 128 \
+  --ee_layers 1
+
+pred_len=360
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 48 360 \
+  --batch_size 64 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 16 \
+  --d_layers 1 \
+  --d_model 8 \
+  --data exchange_rate \
+  --data_path exchange_rate.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 1 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 24 \
+  --learning_rate 0.0001 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/exchange_rate \
+  --seasonal_patterns Monthly \
+  --seq_len 48 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6
+
+
+pred_len=720
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 720 \
+  --batch_size 64 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 16 \
+  --d_layers 1 \
+  --d_model 16 \
+  --data exchange_rate \
+  --data_path exchange_rate.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 1 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 24 \
+  --learning_rate 0.00001 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/exchange_rate \
+  --seasonal_patterns Monthly \
+  --seq_len 48 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 512 \
+  --dd_ff 512 \
+  --ee_layers 3
+
+pred_len=1080
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 48 540 1080 \
+  --batch_size 64 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 8 \
+  --d_layers 1 \
+  --d_model 8 \
+  --data exchange_rate \
+  --data_path exchange_rate.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 1 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 24 \
+  --learning_rate 0.0001 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/exchange_rate \
+  --seasonal_patterns Monthly \
+  --seq_len 48 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 512 \
+  --dd_ff 512 \
+  --ee_layers 3

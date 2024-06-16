@@ -1,0 +1,186 @@
+model_name=STEncoderS
+
+pred_len=96
+python -u run.py \
+     --STEncoder \
+     --STEncoder_lambda 1.0 \
+     --STEncoder_multiscales 96 \
+     --batch_size 64 \
+     --c_out 1 \
+     --checkpoints "./checkpoints/" \
+     --d_ff 16 \
+     --d_layers 1 \
+     --d_model 16 \
+     --data ETTh2 \
+     --data_path ETTh2.csv \
+     --dec_in 7 \
+     --des Exp \
+     --e_layers 3 \
+     --embed timeF \
+     --enc_in 1 \
+     --factor 1 \
+     --features S \
+     --freq h \
+     --is_training 1 \
+     --itr 5 \
+     --label_len 48 \
+     --learning_rate 0.005 \
+     --loss MSE \
+     --lradj type1 \
+     --model $model_name \
+     --n_heads 8 \
+     --num_kernels 6 \
+     --num_workers 2 \
+     --p_hidden_layers 2 \
+     --patience 3 \
+     --pred_len $pred_len \
+     --root_path "./dataset/ETT-small" \
+     --seasonal_patterns Monthly \
+     --seq_len 168 \
+     --target OT \
+     --task_name long_term_forecast \
+     --top_k 5 \
+     --train_epochs 10 \
+     --train_ratio 0.6 \
+     --dd_model 128 \
+     --dd_ff 128 \
+     --ee_layers 2 
+
+pred_len=720
+python -u run.py \
+     --STEncoder \
+     --STEncoder_lambda 0.1 \
+     --STEncoder_multiscales 720 \
+     --batch_size 64 \
+     --c_out 1 \
+     --checkpoints "./checkpoints/" \
+     --d_ff 16 \
+     --d_layers 1 \
+     --d_model 16 \
+     --data ETTh2 \
+     --data_path ETTh2.csv \
+     --dec_in 7 \
+     --des Exp \
+     --e_layers 3 \
+     --embed timeF \
+     --enc_in 1 \
+     --factor 1 \
+     --features S \
+     --freq h \
+     --is_training 1 \
+     --itr 5 \
+     --label_len 48 \
+     --learning_rate 0.005 \
+     --loss MSE \
+     --lradj type1 \
+     --model $model_name \
+     --n_heads 8 \
+     --num_kernels 6 \
+     --num_workers 2 \
+     --p_hidden_layers 2 \
+     --patience 3 \
+     --pred_len $pred_len \
+     --root_path "./dataset/ETT-small" \
+     --seasonal_patterns Monthly \
+     --seq_len 168 \
+     --target OT \
+     --task_name long_term_forecast \
+     --top_k 5 \
+     --train_epochs 10 \
+     --train_ratio 0.6 \
+     --dd_model 128 \
+     --dd_ff 128 \
+     --ee_layers 2 
+
+
+pred_len=1440
+python -u run.py \
+     --STEncoder \
+     --STEncoder_lambda 1.0 \
+     --STEncoder_multiscales 720 \
+     --batch_size 64 \
+     --c_out 1 \
+     --checkpoints "./checkpoints/" \
+     --d_ff 16 \
+     --d_layers 1 \
+     --d_model 16 \
+     --data ETTh2 \
+     --data_path ETTh2.csv \
+     --dec_in 7 \
+     --des Exp \
+     --e_layers 3 \
+     --embed timeF \
+     --enc_in 1 \
+     --factor 1 \
+     --features S \
+     --freq h \
+     --is_training 1 \
+     --itr 5 \
+     --label_len 48 \
+     --learning_rate 0.005 \
+     --loss MSE \
+     --lradj type1 \
+     --model $model_name \
+     --n_heads 8 \
+     --num_kernels 6 \
+     --num_workers 2 \
+     --p_hidden_layers 2 \
+     --patience 3 \
+     --pred_len $pred_len \
+     --root_path "./dataset/ETT-small" \
+     --seasonal_patterns Monthly \
+     --seq_len 168 \
+     --target OT \
+     --task_name long_term_forecast \
+     --top_k 5 \
+     --train_epochs 10 \
+     --train_ratio 0.6 \
+     --dd_model 128 \
+     --dd_ff 128 \
+     --ee_layers 2 
+
+pred_len=2160
+python -u run.py \
+     --STEncoder \
+     --STEncoder_lambda 0.1 \
+     --STEncoder_multiscales 720 \
+     --batch_size 64 \
+     --c_out 1 \
+     --checkpoints "./checkpoints/" \
+     --d_ff 8 \
+     --d_layers 1 \
+     --d_model 8 \
+     --data ETTh2 \
+     --data_path ETTh2.csv \
+     --dec_in 7 \
+     --des Exp \
+     --e_layers 3 \
+     --embed timeF \
+     --enc_in 1 \
+     --factor 1 \
+     --features S \
+     --freq h \
+     --is_training 1 \
+     --itr 5 \
+     --label_len 48 \
+     --learning_rate 0.001 \
+     --loss MSE \
+     --lradj type1 \
+     --model $model_name \
+     --n_heads 8 \
+     --num_kernels 6 \
+     --num_workers 2 \
+     --p_hidden_layers 2 \
+     --patience 3 \
+     --pred_len $pred_len \
+     --root_path "./dataset/ETT-small" \
+     --seasonal_patterns Monthly \
+     --seq_len 168 \
+     --target OT \
+     --task_name long_term_forecast \
+     --top_k 5 \
+     --train_epochs 10 \
+     --train_ratio 0.6 \
+     --dd_model 128 \
+     --dd_ff 128 \
+     --ee_layers 2 

@@ -1,0 +1,197 @@
+model=STEncoderS
+
+pred_len=14
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 14 \
+  --batch_size 12 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 16 \
+  --d_layers 1 \
+  --d_model 16 \
+  --data national_illness \
+  --data_path national_illness.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 4 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 7 \
+  --learning_rate 0.005 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_dims 128 128 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/illness \
+  --seasonal_patterns Monthly \
+  --seq_len 14 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 64 \
+  --dd_ff 64 \
+  --ee_layers 2
+
+pred_len=28
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 28 \
+  --batch_size 12 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 16 \
+  --d_layers 1 \
+  --d_model 16 \
+  --data national_illness \
+  --data_path national_illness.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 4 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 7 \
+  --learning_rate 0.005 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_dims 128 128 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/illness \
+  --seasonal_patterns Monthly \
+  --seq_len 14 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 64 \
+  --dd_ff 64 \
+  --ee_layers 2
+
+pred_len=56
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 56 \
+  --batch_size 24 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 128 \
+  --d_layers 1 \
+  --d_model 128 \
+  --data national_illness \
+  --data_path national_illness.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 3 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 7 \
+  --learning_rate 0.005 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_dims 128 128 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/illness \
+  --seasonal_patterns Monthly \
+  --seq_len 14 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 512 \
+  --dd_ff 512 \
+  --ee_layers 3
+
+pred_len=112
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 112 \
+  --batch_size 12 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 128 \
+  --d_layers 1 \
+  --d_model 128 \
+  --data national_illness \
+  --data_path national_illness.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 3 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 7 \
+  --learning_rate 0.005 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_dims 128 128 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/illness \
+  --seasonal_patterns Monthly \
+  --seq_len 14 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 512 \
+  --dd_ff 512 \
+  --ee_layers 3

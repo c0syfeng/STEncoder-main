@@ -1,0 +1,197 @@
+model=STEncoderS
+
+pred_len=96
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 96 \
+  --STEncoder_wnorm ReVIN \
+  --batch_size 64 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 16 \
+  --d_layers 1 \
+  --d_model 16 \
+  --data traffic \
+  --data_path traffic.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 3 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 48 \
+  --learning_rate 0.005 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/traffic \
+  --seasonal_patterns Monthly \
+  --seq_len 336 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 10 \
+  --train_ratio 0.6 \
+  --dd_model 256 \
+  --dd_ff 256 \
+  --ee_layers 3
+
+pred_len=720
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 96 \
+  --STEncoder_wnorm ReVIN \
+  --batch_size 64 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 16 \
+  --d_layers 1 \
+  --d_model 16 \
+  --data traffic \
+  --data_path traffic.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 3 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 48 \
+  --learning_rate 0.005 \
+  --loss MSE \
+  --lradj type1 \
+  --mask_rate 0.25 \
+  --model $model \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/traffic \
+  --seasonal_patterns Monthly \
+  --seq_len 336 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 256 \
+  --dd_ff 256 \
+  --ee_layers 3
+
+
+pred_len=1440
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 96 \
+  --STEncoder_wnorm ReVIN \
+  --batch_size 64 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 16 \
+  --d_layers 1 \
+  --d_model 16 \
+  --data traffic \
+  --data_path traffic.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 3 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --gpu 0 \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 48 \
+  --learning_rate 0.005 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/traffic \
+  --seasonal_patterns Monthly \
+  --seq_len 336 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 256 \
+  --dd_ff 256 \
+  --ee_layers 3
+
+pred_len=2160
+
+python run.py \
+  --STEncoder \
+  --STEncoder_lambda 1.0 \
+  --STEncoder_multiscales 96 \
+  --STEncoder_wnorm ReVIN \
+  --batch_size 64 \
+  --c_out 1 \
+  --checkpoints ./checkpoints/ \
+  --d_ff 16 \
+  --d_layers 1 \
+  --d_model 16 \
+  --data traffic \
+  --data_path traffic.csv \
+  --dec_in 7 \
+  --des Exp \
+  --e_layers 3 \
+  --embed timeF \
+  --enc_in 1 \
+  --factor 1 \
+  --features S \
+  --freq h \
+  --is_training 1 \
+  --itr 5 \
+  --label_len 48 \
+  --learning_rate 0.005 \
+  --loss MSE \
+  --lradj type1 \
+  --model $model \
+  --moving_avg 25 \
+  --n_heads 8 \
+  --num_kernels 6 \
+  --num_workers 2 \
+  --p_hidden_layers 2 \
+  --patience 3 \
+  --pred_len $pred_len \
+  --root_path ./dataset/traffic \
+  --seasonal_patterns Monthly \
+  --seq_len 336 \
+  --target OT \
+  --task_name long_term_forecast \
+  --top_k 5 \
+  --train_epochs 50 \
+  --train_ratio 0.6 \
+  --dd_model 256 \
+  --dd_ff 256 \
+  --ee_layers 3
